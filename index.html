@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc; background-color: #171818}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #4689cc; -webkit-text-stroke: #4689cc; background-color: #171818; min-height: 16.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Fake Airport Operations API Documentation (v1)&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>line-height: 1.6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f4f4f4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #333;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.container {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 80%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 10px rgba(0,0,0,0.1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #35424a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: #e8491d 3px solid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header h1 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 2.5em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header p {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.1em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.api-section {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f9f9f9;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.api-section h2 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #35424a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #e8491d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding-bottom: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.endpoint {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding-bottom: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: 1px dotted #ccc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.endpoint:last-child {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-bottom: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.endpoint h3 {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #e8491d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 3px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.endpoint h3 span.method {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #5cb85c;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 3px 7px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 3px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-right: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.9em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.endpoint p {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>pre {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #272822;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #f8f8f2;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow-x: auto;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 0.9em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.parameters th, .parameters td {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: left;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.parameters table {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.parameters th {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #eef;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.important-note {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #fff3cd;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #856404;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 1px solid #ffeeba;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 15px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.important-note strong {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>footer {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #35424a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #ffffff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Fake Airport Operations API Documentation&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Version 1.0 - For demonstration purposes only.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="important-note"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;strong&gt;Disclaimer:&lt;/strong&gt; This is documentation for a FAKE/MOCK API.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>The endpoints described below are not live and the data is purely fictional.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>This document is intended for illustrative and developmental purposes only.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Do not attempt to use these endpoints for real-world applications.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h2&gt;Introduction&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Welcome to the Fake Airport Operations API. This API (if it were real) would provide access to various datasets related to airport activities, including passenger movements, commercial transactions, and facility status.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;All API access is over HTTPS, and accessed from the (fictional) base URL: &lt;code&gt;https://api.fakeairport.com/v1&lt;/code&gt;. All data is sent and received as JSON.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="api-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Authentication&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;For a real API, authentication would be required. Typically, this would involve an API key sent as an HTTP header:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;code&gt;Authorization: Bearer YOUR_API_KEY&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Since this is a fake API, no actual authentication is implemented or needed for understanding this documentation.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="api-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Rate Limiting&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Real APIs usually have rate limits. For example, 100 requests per minute. Exceeding this limit would result in a &lt;code&gt;429 Too Many Requests&lt;/code&gt; error.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="api-section"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Error Handling&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;The API (would) use standard HTTP status codes to indicate the success or failure of an API request.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;200 OK&lt;/code&gt; - Request successful.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;400 Bad Request&lt;/code&gt; - Your request is malformed.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;401 Unauthorized&lt;/code&gt; - Your API key is wrong or missing.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;404 Not Found&lt;/code&gt; - The requested resource doesn't exist.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;429 Too Many Requests&lt;/code&gt; - You're hitting the API too often.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;code&gt;500 Internal Server Error&lt;/code&gt; - We had a problem with our server (try again later).&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Error responses are in JSON format:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"error": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"code": 404,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"message": "Resource not found."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="api-section" id="passenger-traffic"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;1. Passenger Traffic &amp; Terminal Operations&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Provides data about passenger movements through the airport terminals.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="endpoint"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;&lt;span class="method"&gt;GET&lt;/span&gt; /passenger_traffic&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retrieves a list of passenger traffic records. Supports pagination and filtering.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Query Parameters:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="parameters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Parameter&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Type&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Description&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Example&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;limit&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Integer&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Number of records to return (default: 20, max: 100).&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?limit=10&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;offset&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Integer&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Number of records to skip for pagination.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?offset=20&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;date&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String (YYYY-MM-DD)&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by a specific date.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?date=2024-01-15&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;flight_number&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by flight number.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?flight_number=VS101&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;terminal&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by terminal.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?terminal=T1&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;arrival_departure&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by "arrival" or "departure".&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?arrival_departure=arrival&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;passenger_type&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by "international" or "domestic".&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?passenger_type=international&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Request:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;GET https://api.fakeairport.com/v1/passenger_traffic?limit=2&amp;date=2024-01-15&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Success Response (200 OK):&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"data": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"passenger_traffic_data": [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"passenger_id": "P006",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"flight_number": "VS101",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"arrival_departure": "arrival",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"terminal": "T1",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"gate": "A08",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"passenger_type": "international",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"nationality": "US",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"timestamp": "2024-01-15 13:20:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"dwell_time_minutes": 75</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"passenger_id": "P007",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"flight_number": "FR892",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"arrival_departure": "departure",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"terminal": "T1",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"gate": "C15",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"passenger_type": "international",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"nationality": "ES",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"timestamp": "2024-01-15 14:10:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"dwell_time_minutes": 105</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"pagination": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"limit": 2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"offset": 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"total_records": 50, // Example total</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"next_offset": 2</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="endpoint"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;&lt;span class="method"&gt;GET&lt;/span&gt; /passenger_traffic/{passenger_id}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retrieves a specific passenger traffic record by its ID.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Path Parameters:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="parameters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Parameter&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Type&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Description&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;passenger_id&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;The unique identifier for the passenger record.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Request:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;GET https://api.fakeairport.com/v1/passenger_traffic/P006&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Success Response (200 OK):&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"data": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"passenger_id": "P006",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"flight_number": "VS101",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"arrival_departure": "arrival",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"terminal": "T1",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"gate": "A08",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"passenger_type": "international",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"nationality": "US",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"timestamp": "2024-01-15 13:20:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"dwell_time_minutes": 75</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="api-section" id="commercial-revenue"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;2. Commercial Revenue Streams&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Provides data on commercial transactions within the airport.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="endpoint"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;&lt;span class="method"&gt;GET&lt;/span&gt; /commercial_revenue&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retrieves a list of commercial transaction records. Supports pagination and filtering.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Query Parameters:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="parameters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Parameter&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Type&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Description&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Example&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;limit&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Integer&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Number of records to return.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?limit=10&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;offset&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Integer&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Number of records to skip.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?offset=10&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;passenger_id&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by passenger ID.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?passenger_id=P006&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;vendor_category&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by vendor category (e.g., "retail", "food_beverage").&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?vendor_category=retail&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;location_zone&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by location zone (e.g., "departure_lounge").&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?location_zone=departure_lounge&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                             </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;date_from&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String (YYYY-MM-DD)&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter transactions from this date.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?date_from=2024-01-15&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;date_to&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String (YYYY-MM-DD)&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter transactions up to this date.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?date_to=2024-01-16&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Request:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;GET https://api.fakeairport.com/v1/commercial_revenue?limit=1&amp;vendor_category=retail&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Success Response (200 OK):&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"data": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"commercial_revenue_data": [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"transaction_id": "T006",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"passenger_id": "P006",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"vendor_category": "retail",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"vendor_name": "Boots",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"product_category": "health_beauty",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"amount_gbp": 18.95,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"transaction_time": "2024-01-15 13:20:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"location_zone": "main_terminal"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"pagination": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"limit": 1,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"offset": 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"total_records": 50, // Example total</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"next_offset": 1</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="endpoint"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;&lt;span class="method"&gt;GET&lt;/span&gt; /commercial_revenue/{transaction_id}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retrieves a specific commercial transaction by its ID.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Path Parameters:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="parameters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Parameter&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Type&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Description&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;transaction_id&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;The unique identifier for the transaction.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Request:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;GET https://api.fakeairport.com/v1/commercial_revenue/T007&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Success Response (200 OK):&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"data": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"transaction_id": "T007",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"passenger_id": "P007",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"vendor_category": "food_beverage",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"vendor_name": "Burger King",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"product_category": "fast_food",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"amount_gbp": 14.50,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"transaction_time": "2024-01-15 14:15:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"location_zone": "departure_lounge"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="api-section" id="facility-utilization"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;3. Facility Utilization &amp; Services&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Provides data on the utilization and status of airport facilities.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="endpoint"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;&lt;span class="method"&gt;GET&lt;/span&gt; /facilities&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retrieves a list of airport facility statuses. Supports pagination and filtering.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;p&gt;&lt;em&gt;Note: The source data for this endpoint was provided in a columnar format. For the API response, it's structured as a list of facility objects for better usability.&lt;/em&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Query Parameters:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="parameters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Parameter&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Type&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Description&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Example&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;limit&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Integer&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Number of records to return.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?limit=10&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;offset&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Integer&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Number of records to skip.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?offset=10&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;facility_type&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by facility type (e.g., "retail_unit", "parking_space").&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?facility_type=restaurant&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;zone&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by zone (e.g., "departure_lounge", "car_park_2").&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?zone=main_terminal&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;maintenance_status&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;Filter by maintenance status ("operational", "maintenance_required").&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;?maintenance_status=operational&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Request:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;GET https://api.fakeairport.com/v1/facilities?limit=2&amp;facility_type=retail_unit&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Success Response (200 OK):&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"data": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"facility_status_data": [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"facility_id": "F006",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"facility_type": "retail_unit",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"zone": "main_terminal",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"capacity": 45,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"current_occupancy": 32,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"revenue_per_hour": 175.00,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"operating_hours": "06:00-22:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"maintenance_status": "operational"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"facility_id": "F011",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"facility_type": "retail_unit",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"zone": "arrivals_hall",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"capacity": 35,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"current_occupancy": 28,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"revenue_per_hour": 140.00,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"operating_hours": "06:00-22:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>"maintenance_status": "operational"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"pagination": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"limit": 2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"offset": 0,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"total_records": 50, // Example total</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"next_offset": 2</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="endpoint"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h3&gt;&lt;span class="method"&gt;GET&lt;/span&gt; /facilities/{facility_id}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retrieves a specific facility's status by its ID.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Path Parameters:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                 </span>&lt;div class="parameters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Parameter&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Type&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;th&gt;Description&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;&lt;code&gt;facility_id&lt;/code&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;String&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                                </span>&lt;td&gt;The unique identifier for the facility.&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                            </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Request:&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;GET https://api.fakeairport.com/v1/facilities/F007&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;h4&gt;Example Success Response (200 OK):&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;pre&gt;&lt;code&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>"data": {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"facility_id": "F007",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"facility_type": "restaurant",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"zone": "departure_lounge",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"capacity": 120,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"current_occupancy": 95,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"revenue_per_hour": 220.00,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"operating_hours": "05:00-23:00",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>"maintenance_status": "operational"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1">}&lt;/code&gt;&lt;/pre&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; 2024 Fake Airport Inc. - Mock API Documentation. Not for real use.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
